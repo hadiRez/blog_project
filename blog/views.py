@@ -20,7 +20,7 @@ class PostListView(generic.ListView):
     context_object_name = 'posts_list'
 
     def get_queryset(self):
-        return Post.objects.filter(status = 'pub').order_by('-datetime_modified')
+        return Post.objects.filter(status='pub').order_by('-datetime_modified')
 
 
 # def post_detail_view(request, pk):
@@ -42,6 +42,7 @@ class PostDetailView(generic.DetailView):
 #         form = NewPostForm()
 #
 #     return render(request, 'blog/post_create.html', context={'form':form})
+
 
 class PostCreateView(generic.CreateView):
     form_class = NewPostForm
